@@ -1,6 +1,5 @@
 class MyCar
-    attr_accessor :year
-    attr_accessor :model
+    attr_reader :year
     attr_accessor :color
 
     def initialize(year, model, color)
@@ -26,7 +25,11 @@ class MyCar
 
     def shut_off
         @curr_speed = 0
-        puts "You shut off the #{@year} #{model}."
+        puts "You shut off the #{@color} #{@year} #{@model}."
+    end
+
+    def spray_paint(color)
+        @color = color
     end
 end
 
@@ -39,3 +42,11 @@ tundra.current_speed
 tundra.slow_down(10)
 tundra.current_speed
 tundra.shut_off
+
+puts tundra.color
+puts tundra.year
+
+tundra.spray_paint("red")
+
+puts tundra.color
+puts tundra.year
